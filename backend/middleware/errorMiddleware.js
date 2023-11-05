@@ -5,7 +5,7 @@ const notFound = (request, response, next) => {
   next(error);
 };
 
-const errorHandler = (error, request, response) => {
+const errorHandler = (error, request, response, next) => {
   ///Since we don't want the status to be remained at success(200/201):
   let statusCode =
     response.statusCode === 200 || 201 ? 500 : response.statusCode;
